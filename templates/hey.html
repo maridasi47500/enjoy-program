@@ -1,12 +1,17 @@
+{% extends 'base.html' %}
+
+{% block montitre %}
+debut de mes mots: bienvenue dans art of coding like.
+{% endblock %}
+{% block content %}
 <h1># enjoy-program</h1>
-<p>
-choisis une activité
-<select>
-<option>couture</option>
-<option>sport crawling</option>
-<option>art of coding</option>
-<option>developer of a website with a framework in final online mode</option>
-</select>
-</p>
-<p>check the timestamp <input type="datetime"/></p>
-<p>create a timestamped quote/tip about my activity <textarea></textarea></p>
+{% for x in users | reverse %}
+ <li>{{ x["first_name"]  }}</li>
+
+{% endfor %} 
+fin de mes mots : fais du codage ou tout ce qui est copain avec : sport, couture, etc, tout ça est timestamped ou tamponné, enjoy
+{% endblock %}
+{% block liens %}
+<a href="/">welcome</a>
+{% endblock %}
+<a href="/add_one_user"> add one user</a><a href="/add_one_country"> add one country</a><a href="/add_one_programming_session"> add one programming_session</a><a href="/add_one_sewing_session"> add one sewing_session</a><a href="/add_one_sport_session"> add one sport_session</a><a href="/add_one_application_development"> add one application_development</a>
